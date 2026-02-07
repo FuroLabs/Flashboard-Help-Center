@@ -19,7 +19,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 // Allow static generation of all article and category pages
 export async function generateStaticParams() {
     const articles = getAllArticles();
-    const params = [];
+    const params: { slug: string[] }[] = [];
 
     // Add all article pages
     articles.forEach((article) => {
