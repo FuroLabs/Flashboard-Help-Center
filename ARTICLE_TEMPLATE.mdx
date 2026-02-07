@@ -1,0 +1,165 @@
+---
+title: "Article Title"
+description: "Brief description of what this article covers."
+category: "Features"
+updatedAt: "2025-02-08"
+---
+
+# Article Title
+
+Brief introduction paragraph that explains what this feature/topic is about and why it matters.
+
+## Overview Section
+
+This section provides a high-level overview WITHOUT accordions. Keep this concise - 2-3 paragraphs max.
+
+**Key Points:**
+- Bullet point 1
+- Bullet point 2
+- Bullet point 3
+
+<Accordion>
+<AccordionItem title="Main Topic 1">
+
+Content for the first major section goes here. Use ordered lists with the left-accent styling:
+
+1. First step or instruction
+2. Second step or instruction
+3. Third step or instruction
+4. Fourth step or instruction
+
+### Subsection Within Accordion
+
+You can have subsections:
+
+1. Subsection step 1
+2. Subsection step 2
+3. Subsection step 3
+
+**Additional Notes:**
+- Bullet points also work
+- And maintain proper styling
+
+</AccordionItem>
+
+<AccordionItem title="Main Topic 2">
+
+Second major section content:
+
+1. Another set of instructions
+2. With the same left-accent styling
+3. Creating a unified look
+4. Across all articles
+
+### Tips and Best Practices
+
+1. Keep instructions clear and numbered
+2. Use subsections to organize complex content
+3. Add context where needed
+4. Link to related articles
+
+</AccordionItem>
+
+<AccordionItem title="Main Topic 3">
+
+### Multiple Subsections Example
+
+**Method 1:**
+1. Do this first
+2. Then do this
+3. Finally this
+
+**Method 2:**
+1. Alternative approach step 1
+2. Alternative approach step 2
+3. Alternative approach step 3
+
+</AccordionItem>
+
+<AccordionItem title="Advanced Features">
+
+More complex content:
+
+1. Advanced step 1 with detailed explanation
+2. Advanced step 2 with important notes
+3. Advanced step 3 with warnings or tips
+
+**Important:** You can include blockquotes for special notes.
+
+> **Note:** This is how you add important callouts or warnings within accordion sections.
+
+</AccordionItem>
+
+<AccordionItem title="Settings & Customization">
+
+Configuration options:
+
+1. Open **App Settings** > **Section Name**
+2. Adjust these options:
+   - **Option 1** - Description of what it does
+   - **Option 2** - Description of what it does
+   - **Option 3** - Description of what it does
+3. Tap **Save** to apply changes
+
+</AccordionItem>
+
+<AccordionItem title="Troubleshooting">
+
+Common issues and solutions:
+
+### Issue 1: Feature not working?
+- Solution 1: Try this first
+- Solution 2: If that doesn't work, try this
+- Solution 3: Last resort option
+
+### Issue 2: Another common problem?
+- Solution: Step-by-step fix
+- Alternative: Another approach
+
+</AccordionItem>
+</Accordion>
+
+## Next Steps
+
+Links to related articles (outside accordion):
+- [Related Article 1](/category/article-1) - Why it's related
+- [Related Article 2](/category/article-2) - Why it's related
+- [Related Article 3](/category/article-3) - Why it's related
+
+---
+
+## Styling Guidelines
+
+### Left-Accent List Styling
+The CSS automatically applies a subtle gray vertical line to the left of ordered lists (`<ol>`). This creates the clean, minimalist look:
+- Lists are numbered (1., 2., 3.)
+- A 3px gray border appears on the left
+- Proper padding ensures readability
+- Works automatically in accordion content
+
+### When to Use Accordions
+✅ **Use accordions for:**
+- Step-by-step instructions
+- How-to sections
+- Feature explanations
+- Settings guides
+- Troubleshooting sections
+
+❌ **Don't use accordions for:**
+- Brief introductions (first paragraph)
+- Simple bullet lists
+- Next Steps links
+- Very short sections (< 3 lines)
+
+### Section Organization
+1. **Title & Introduction** - Always outside accordions
+2. **Overview** - Brief context (optional, outside accordions)
+3. **Main Content** - Wrapped in `<Accordion>` component
+4. **Next Steps** - Always outside accordions at the end
+
+### Accordion Best Practices
+- Each `<AccordionItem>` needs a clear, descriptive `title` attribute
+- First accordion item opens by default
+- Only one accordion item is open at a time
+- Keep accordion titles concise (3-7 words)
+- Group related content within the same accordion item

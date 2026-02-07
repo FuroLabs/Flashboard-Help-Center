@@ -55,16 +55,14 @@ export function Search({ articles, className }: SearchProps) {
 
     return (
         <div
-            className={cn("relative w-full max-w-2xl mx-auto", className)}
+            className={cn("relative z-50 mb-6 w-full max-w-2xl mx-auto", className)}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
         >
-            <div className="relative group">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <SearchIcon className="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
-                </div>
+            <div className="group flex h-12 items-center gap-3 rounded-full border border-blue-100 bg-white px-4 shadow-md shadow-gray-200/40 transition-all focus-within:border-blue-300">
+                <SearchIcon className="h-5 w-5 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
                 <input
                     type="text"
-                    className="block w-full pl-11 pr-4 py-4 border-0 rounded-2xl bg-white shadow-lg shadow-gray-200/50 text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500/20 focus:outline-none text-lg transition-all"
+                    className="h-full w-full bg-transparent text-base text-gray-900 placeholder:text-gray-400 focus:outline-none"
                     placeholder="Search for help, articles, and more..."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -73,26 +71,28 @@ export function Search({ articles, className }: SearchProps) {
             </div>
 
             {isOpen && results.length > 0 && (
-                <div className="absolute mt-2 w-full bg-white rounded-xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
-                    <ul className="max-h-[60vh] overflow-y-auto py-2">
+                <div className="absolute mt-2 w-full bg-white rounded-xl shadow-lg shadow-gray-200/50 overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
+                    <ul className="max-h-[60vh] overflow-y-auto py-2 pr-2">
                         {results.map((result) => (
                             <li key={result.item.slug}>
                                 <Link
                                     href={`/${result.item.slug}`}
-                                    className="flex items-start gap-4 px-6 py-4 hover:bg-gray-50 transition-colors group"
+                                    className="flex items-start gap-4 px-6 py-4 text-left hover:bg-gray-50 transition-colors group"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100 group-hover:text-blue-700 transition-colors">
+                                    <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-100 group-hover:text-blue-700 transition-colors">
                                         <FileText className="h-5 w-5" />
                                     </div>
-                                    <div>
-                                        <h4 className="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                                            {result.item.title}
-                                        </h4>
-                                        <p className="text-sm text-gray-500 line-clamp-1 mt-0.5">
-                                            {result.item.description}
-                                        </p>
-                                        <span className="inline-block mt-2 text-xs font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+                                    <div className="flex flex-1 items-start gap-4">
+                                        <div className="flex-1">
+                                            <h4 className="text-base font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                                {result.item.title}
+                                            </h4>
+                                            <p className="text-sm text-gray-500 line-clamp-1 mt-0.5">
+                                                {result.item.description}
+                                            </p>
+                                        </div>
+                                        <span className="mt-1 ml-auto shrink-0 text-xs font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
                                             {result.item.category}
                                         </span>
                                     </div>

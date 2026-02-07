@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -12,15 +13,70 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* The UI is light-themed; keep system dark mode from washing out text. */
+:root {
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.prose {
+  color: #111827;
+}
+
+.prose :where(p, li) {
+  color: #374151;
+  line-height: 1.7;
+}
+
+.prose :where(h2) {
+  scroll-margin-top: 6rem;
+}
+
+.prose :where(ol) {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-left: 3px solid #e5e7eb;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 1.75rem;
+}
+
+.prose :where(ol > li) {
+  padding-left: 0.25rem;
+  margin: 0.35rem 0;
+}
+
+.prose :where(ol > li > p) {
+  margin: 0.35rem 0;
+}
+
+.prose :where(em) {
+  font-size: 0.95em;
+  color: #6b7280;
+}
+
+.prose :where(blockquote) {
+  border-left: 4px solid #93c5fd;
+  background: #eff6ff;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  color: #1f2937;
+}
+
+.prose :where(table) {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.prose :where(thead) {
+  background: #f9fafb;
 }
