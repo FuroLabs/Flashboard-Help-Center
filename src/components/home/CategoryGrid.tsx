@@ -5,6 +5,7 @@ import {
     Zap,
     HelpCircle,
     Shield,
+    Sparkles,
     ArrowRight
 } from "lucide-react";
 
@@ -49,6 +50,14 @@ const CATEGORIES = [
         color: "text-green-600",
         bg: "bg-green-50",
     },
+    {
+        title: "Creative Tools",
+        slug: "creative-tools",
+        description: "ASCII art, emoticons, and decorative elements.",
+        icon: Sparkles,
+        color: "text-pink-600",
+        bg: "bg-pink-50",
+    },
 ];
 
 export function CategoryGrid() {
@@ -59,14 +68,7 @@ export function CategoryGrid() {
                     {CATEGORIES.map((category) => (
                         <Link
                             key={category.slug}
-                            href={`#`} // Note: We haven't implemented category pages yet, ideally this links to /category/[slug] or we just list articles here.
-                            // For now, let's link to the first article of that category if possible, or just a placeholder.
-                            // Actually, checking the content structure, we have folders.
-                            // Let's assume for now we might want a category index page, but the plan didn't explicitly implement one.
-                            // I'll leave it as a dead link '#' or maybe a search filter link in future?
-                            // Updated Plan: Let's make these cards just visual navigational aids that perhaps scroll or map to sections?
-                            // Standard Help Center practice: Link to a Category Landing Page.
-                            // I will set href to `/category/${category.slug}` and we can implement that page later.
+                            href={`/${category.slug}`}
                             className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-gray-100 p-8 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
                         >
                             <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors ${category.bg} ${category.color}`}>

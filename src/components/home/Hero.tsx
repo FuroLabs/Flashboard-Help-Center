@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ articles }: HeroProps) {
     return (
-        <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 to-white pb-16 pt-20 lg:pt-32">
+        <section className="relative overflow-visible bg-gradient-to-b from-blue-50/50 to-white pb-16 pt-20 lg:pt-32">
             {/* Abstract Background Shapes */}
             <div className="absolute top-0 left-1/2 -ml-[40rem] -mt-16 w-[80rem] h-[80rem] rounded-full bg-blue-100/20 blur-3xl -z-10" />
             <div className="absolute top-0 right-1/2 -mr-[40rem] -mt-16 w-[80rem] h-[80rem] rounded-full bg-purple-100/20 blur-3xl -z-10" />
